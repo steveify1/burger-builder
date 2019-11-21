@@ -6,7 +6,7 @@ class BurgerBuilder extends Component {
   render() {
     return (
       <Aux>
-        <h2 className={classes.burger}>Burger builder page</h2>
+        <h2 className={classes.burger}>Burger builder page.</h2>
         <div>Burger Builder</div>
         <div>Builder Controls</div>
       </Aux>
