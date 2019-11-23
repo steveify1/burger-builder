@@ -6,10 +6,13 @@
   background-color: rgb(2, 10, 26);
   color: #fff;
   padding: 1em 3em;
-  margin-bottom: 1em;
 }
 
 header {
   color: red;
-  height: 40vh;
+  /* height: 40vh; */
+}
+
+main {
+  margin: 1em 0;
 }

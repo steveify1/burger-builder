@@ -1,0 +1,17 @@
+.CostTracker {
+  text-align: center;
+  margin-top: 1em;
+}
+
+.btn {
+  background-color: green;
+  border-radius: 5px;
+  padding: 1em;
+  color: #fff;
+  font-weight: 600;
+}
+
+.total {
+  margin-left: 1em;
+  font-size: 1.5rem;
+}

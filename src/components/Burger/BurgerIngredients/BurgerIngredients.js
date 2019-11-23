@@ -1,5 +1,5 @@
 import React from 'react';
-import classes from './burgerIngredients.module.css'
+import classes from './BurgerIngredients.module.css'
 
 const burgerIngredient = (props) => {
   // Write some login to render the jsx code based on the props
@@ -10,8 +10,8 @@ const burgerIngredient = (props) => {
     case ('bread-top'):
       ingredient = (
         <div className={classes.BreadTop}>
-          <div className={classes.seed1}></div>
-          <div className={classes.seed2}></div>
+          <div className={classes.Seeds1}></div>
+          <div className={classes.Seeds2}></div>
         </div>
       );
       break;
