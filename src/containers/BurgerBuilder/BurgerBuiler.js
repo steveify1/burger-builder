@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
-import classes from './BurgerBuilder.module.css';
+// import classes from './BurgerBuilder.module.css';
 import Aux from '../../hoc/Auxiliary';
 import Burger from '../../components/Burger/Burger';
 import BuildControls from '../../components/BuildControls/BuildControls';
 import CostTracker from '../../components/CostTracker/CostTracker';
+import OrderSummary from '../../components/OrderSummary/OrderSummary';
+import Modal from '../../components/Modal/Modal';
+
 
 // Ingredient Prices
 const INGREDIENT_PRICES = {
@@ -30,6 +33,12 @@ class BurgerBuilder extends Component {
 
     // The base price of a burger is initialized here at $5. This value change as ingredients are added to and removed from the burger.
     totalPrice: 5,
+
+    /**
+     * This manages when the order summary modal is shown or removed.
+     * The summary will be displayed if this state is set to true.
+    */
+    showOrderSummary: true,
   }
 
   /**
@@ -78,6 +87,23 @@ class BurgerBuilder extends Component {
     }
   }
 
+  /**
+   * This updates the `showOrderSummary` state to true when
+   * the checkout button is clicked
+   */
+  updateShowOrderSummaryHandler = (event) => {
+    event.bubbles = false;
+    console.log(event);
+    event.stopPropagation();
+    // Get the current value of the state
+    const value = this.state.showOrderSummary;
+
+    // Invert this value
+    this.setState({
+      showOrderSummary: !value
+    });
+  }
+
   componentDidUpdate() {
     console.log(this.state.ingredients);
   }
@@ -85,15 +111,32 @@ class BurgerBuilder extends Component {
   render() {
     return (
       <Aux>
-        <h2 className={classes.burger}>Burger builder page.</h2>
+        {/* <h2 className={classes.burger}>Burger builder page.</h2> */}
+        {/* The Burger Being Build */}
         <Burger ingredients={this.state.ingredients} />
+
+        {/* Burger Build Controls */}
         <BuildControls
           ingredientAdded={this.addIngredientHandler}
           ingredientRemoved={this.removeIngredientHandler}
-          ingredientQuantities={this.state.ingredients}/>
+          ingredientQuantities={this.state.ingredients} />
 
         {/* Total Price */}
-        <CostTracker total={this.state.totalPrice} />
+        <CostTracker total={this.state.totalPrice}
+          // This method will be called when the checkout button is clicked
+          clicked={this.updateShowOrderSummaryHandler} />
+
+        {/* Order Summary Modal */}
+        <Modal
+          visibility={this.state.showOrderSummary}
+          modalClose={this.updateShowOrderSummaryHandler}>
+
+          <OrderSummary
+            ingredients={this.state.ingredients}
+            prices={INGREDIENT_PRICES}
+            grandTotal={this.state.totalPrice} />
+
+        </Modal>
       </Aux>
     );
   }
