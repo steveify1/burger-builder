@@ -1,0 +1,17 @@
+.Modal {
+  min-height: 50vh;
+  width: 80%;
+  background-color: #fff;
+  border-radius: 3px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 301;
+}
+
+@media (min-width: 768px) {
+  .Modal {
+    width: 650px;
+  }
+}
