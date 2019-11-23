@@ -1,0 +1,25 @@
+.LightBox {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 300;
+  overflow-y: scroll;
+}
+
+.LightBox::-webkit-scrollbar {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.LightBox::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 53, 2, 0.1);
+}
+
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
+}

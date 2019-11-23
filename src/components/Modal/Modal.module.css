@@ -1,5 +1,4 @@
 .Modal {
-  min-height: 50vh;
   width: 80%;
   background-color: #fff;
   border-radius: 3px;
@@ -8,6 +7,16 @@
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 301;
+  /* transition: transform 0.4s ease, opacity 0.2s ease; */
+}
+
+.Modal.show {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.Modal.hide {
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 0;
 }
 
 @media (min-width: 768px) {
