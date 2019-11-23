@@ -1,0 +1,40 @@
+.BuildControl {
+  background-color: #FFF;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin: 0.5em 0;
+  padding: 0.5em;
+}
+
+.label {
+  color: rgb(0, 0, 53);
+  text-transform: capitalize;
+}
+
+.controls {
+  margin-right: auto;
+}
+
+.control {
+  /* padding: 0.3em; */
+  display: inline-block;
+  border-radius: 5px;
+  height: 20px;
+  width: 30px;
+  color: #fff;
+  text-align: center;
+  cursor: pointer;
+}
+
+.control.add {
+  margin-right: 2em;
+  background-color: green;
+}
+
+.control.removed {
+  background-color: rgb(255, 81, 0);
+}
+
+.quantity {
+  margin-left: 1.5em;
+}

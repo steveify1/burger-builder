@@ -1,0 +1,11 @@
+.BuildControls {
+  background-color: #e1e1e1;
+  padding: 1em 2em;
+}
+
+@media (min-width: 768px) {
+  .BuildControls {
+    width: 50%;
+    margin: auto;
+  }
+}

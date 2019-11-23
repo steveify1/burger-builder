@@ -39,3 +39,18 @@ a {
   color: #fff;
 }
 
+/* Buttons */
+button {
+  outline: none;
+  border: none;
+}
+
+button,
+.btn {
+  cursor: pointer;
+}
+
+button:hover,
+.btn:hover {
+  opacity: 0.9;
+}
